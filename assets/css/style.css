@@ -1,3 +1,10 @@
+body {
+    background: black;
+    color: #999999;
+}
+.jumbotron {
+    background: black;
+}
 .card {
     display: inline-flex;
 }
