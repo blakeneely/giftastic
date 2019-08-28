@@ -59,18 +59,17 @@ $(document).ready(function(){
     $(document).on("click", ".actor", function(){
         var actor = $(this).attr("data-name");
         console.log($(this).attr("data-name"))
-        // var queryURL = "https://api.giphy.com/v1/gifs/search?q" + actor + "&api_key=08uHsmK4UzYd8KoIXuWdAWPu4gZtNIB5&limit=10";
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        actor + "&api_key=08uHsmK4UzYd8KoIXuWdAWPu4gZtNIB5&limit=10";
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + actor + "&api_key=08uHsmK4UzYd8KoIXuWdAWPu4gZtNIB5&limit=10";
+        // var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
+        // actor + "&api_key=08uHsmK4UzYd8KoIXuWdAWPu4gZtNIB5&limit=10";
 
         
         $.ajax({
             url: queryURL,
             method: "GET"
         }).then(function(response){
-            console.log(response);
             var results = response.data;
-            for (var i = 0; i < results.length; i++){
+            for (var i = 0; i < results.length; i++){                       // Loop 
                 var card = $("<div>");                                      // Create a div element and assign to variable
                 card.addClass("card m-2 border-dark");                      // Add bootstrap classes to div
                 card.css("width","16rem");                                  // Add bootstrap style of 16rem width to div
@@ -79,21 +78,26 @@ $(document).ready(function(){
                 image.addClass("card-img-top");                             // Add bootstrap class to img
                 card.append(image);                                         // Append img to card div
                 var cardBody = $("<div>");                                  // Create div element and assign to variable
-                cardBody.addClass("card-body bg-dark text-white");
-                var p = $("<p>");
-                p.html("Title: " + results[i].title);
-                var pTwo = $("<p>");
-                cardBody.append(p);
-                var rating = results[i].rating
-                rating = rating.toUpperCase();
-                pTwo.html("Rating: " + rating);
-                cardBody.append(pTwo);
-                card.append(cardBody)
-                $(".gif-container").prepend(card);                          
+                cardBody.addClass("card-body bg-dark text-white-50");       // Add bootstrap class to cardBody
+                var p = $("<p>");                                           // Create p element and assign to variable
+                var title = results[i].title;                               // Get title info and assign to variable
+                title = title.toLowerCase()                                 
+                    .split(' ')
+                    .map((s) => s.charAt(0).toUpperCase() + s.substring(1))
+                    .join(' ');
+                p.html("Title: " + title);                                  // Add title info to p
+                cardBody.append(p);                                         // Append p to cardBody div
+                var pTwo = $("<p>");                                        // Create another p element and assign to variable
+                var rating = results[i].rating                              // Get rating info and assign to variable
+                rating = rating.toUpperCase();                              // Make rating uppercase
+                pTwo.html("Rating: " + rating);                             // Add rating info to p 
+                cardBody.append(pTwo);                                      // Append p to cardBody
+                card.append(cardBody)                                       // Append cardBody to card
+                $(".gif-container").prepend(card);                          // Append card to gif-container
             }
         });
 
     });
 
-    renderButtons();
+    renderButtons();                                                        // Load buttons on page
 });
