@@ -5,6 +5,9 @@ body {
 .jumbotron {
     background: rgb(0, 0, 0, 0.3);
 }
+button {
+    margin: 3px;
+}
 .card {
     display: inline-flex;
     background: rgb(0, 0, 0, 0.7);
@@ -18,9 +21,7 @@ body {
 .card-img-top {
     cursor: pointer;
 }
-button {
-    margin: 3px;
-}
 .gif-container {
+    text-align: center;
     background: rgb(0, 0, 0, 0.3);
 }

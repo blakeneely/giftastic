@@ -37,7 +37,7 @@ $(document).ready(function(){
                 image.addClass("card-img-top");                             // Add bootstrap class to img
                 card.append(image);                                         // Append img to card div
                 var cardBody = $("<div>");                                  // Create div element and assign to variable
-                cardBody.addClass("card-body text-light");       // Add bootstrap class to cardBody
+                cardBody.addClass("card-body text-light");                  // Add bootstrap class to cardBody
                 var p = $("<p>");                                           // Create p element and assign to variable
                 var title = results[i].title;                               // Get title info and assign to variable
                 title = title.toLowerCase()                                 // ES6 code snippet from Stack Overflow to cap first letter of each word in title string
@@ -76,7 +76,7 @@ $(document).ready(function(){
     function renderButtons() {
         for (var i = 0; i < options.length; i++) {                          // Loop options array
             var btn = $("<button>");                                        // Create and assign button to variable
-            btn.addClass("actor btn btn-danger");                          // Add bootstrap class and custom actor class to button
+            btn.addClass("actor btn btn-danger");                           // Add bootstrap class and custom actor class to button
             btn.attr("data-name", options[i]);                              // Add "data-name" attribute to button
             var actorBtn = btn.text(options[i]);                            // Create button text and assign to variable
             $(".btn-container").append(actorBtn);                           // Append button to btn-container
