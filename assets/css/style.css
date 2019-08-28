@@ -1,12 +1,13 @@
 body {
-    background: black;
+    background: black url(../../assets/images/colorfulabstract.jpg) no-repeat 50% 50% fixed;
     color: #999999;
 }
 .jumbotron {
-    background: black;
+    background: rgb(0, 0, 0, 0.3);
 }
 .card {
     display: inline-flex;
+    background: rgb(0, 0, 0, 0.7);
 }
 .card-body {
     padding: 10px;
@@ -19,4 +20,7 @@ body {
 }
 button {
     margin: 3px;
+}
+.gif-container {
+    background: rgb(0, 0, 0, 0.3);
 }

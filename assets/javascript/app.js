@@ -27,7 +27,7 @@ $(document).ready(function(){
             var results = response.data;                                    // Save response to variable
             for (var i = 0; i < results.length; i++){                       // Loop to make card for each returned gif from giphy
                 var card = $("<div>");                                      // Create a div element and assign to variable
-                card.addClass("card m-2 border-dark");                      // Add bootstrap classes to div
+                card.addClass("card m-2 border-dark text-center");          // Add bootstrap classes to div
                 card.css("width","16rem");                                  // Add bootstrap style of 16rem width to div
                 var image = $("<img>");                                     // Create img element and assign to variable
                 image.attr("src",results[i].images.fixed_height_still.url)  // Attach url source to image element
@@ -37,7 +37,7 @@ $(document).ready(function(){
                 image.addClass("card-img-top");                             // Add bootstrap class to img
                 card.append(image);                                         // Append img to card div
                 var cardBody = $("<div>");                                  // Create div element and assign to variable
-                cardBody.addClass("card-body bg-dark text-white-50");       // Add bootstrap class to cardBody
+                cardBody.addClass("card-body text-light");       // Add bootstrap class to cardBody
                 var p = $("<p>");                                           // Create p element and assign to variable
                 var title = results[i].title;                               // Get title info and assign to variable
                 title = title.toLowerCase()                                 // ES6 code snippet from Stack Overflow to cap first letter of each word in title string
@@ -76,7 +76,7 @@ $(document).ready(function(){
     function renderButtons() {
         for (var i = 0; i < options.length; i++) {                          // Loop options array
             var btn = $("<button>");                                        // Create and assign button to variable
-            btn.addClass("actor btn btn-success");                          // Add bootstrap class and custom actor class to button
+            btn.addClass("actor btn btn-danger");                          // Add bootstrap class and custom actor class to button
             btn.attr("data-name", options[i]);                              // Add "data-name" attribute to button
             var actorBtn = btn.text(options[i]);                            // Create button text and assign to variable
             $(".btn-container").append(actorBtn);                           // Append button to btn-container
