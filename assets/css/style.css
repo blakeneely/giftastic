@@ -1,5 +1,6 @@
 body {
     background: black url(../../assets/images/colorfulabstract.jpg) no-repeat 50% 50% fixed;
+    background-size: cover;
     color: #999999;
 }
 .jumbotron {
