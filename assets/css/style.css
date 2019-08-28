@@ -8,6 +8,9 @@ body {
 .card {
     display: inline-flex;
 }
+.card-body {
+    padding: 10px;
+}
 button {
     margin: 3px;
 }
