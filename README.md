@@ -10,4 +10,4 @@ This is a simple fully mobile responsive webpage written with JavaScript using j
 
 ### Mobile View
 
-<img src="assets/images/giftastic.png" width="300" height="auto">
+<img src="assets/images/giftasticmobile.png" width="300" height="auto">
